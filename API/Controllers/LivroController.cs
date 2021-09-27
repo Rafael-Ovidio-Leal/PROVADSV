@@ -23,7 +23,7 @@ namespace API.Controllers
         // POST: api/livro/criar
         [HttpPost]
         [Route("criar")]
-        public livro create(Livro livro)
+        public Livro create(Livro livro)
         {
             _context.livros.Add(livro);
             _context.SaveChanges();
@@ -40,7 +40,7 @@ namespace API.Controllers
         [Route("listarId/{Id}")]
         public async Task<IActionResult> GetByIdAsync([FromRoute] int id)
         {
-            livro livro = await _context.livros.FindAsync(id);
+            Livro livro = await _context.livros.FindAsync(id);
             if (livro != null)
             {
                 return Ok(livro);
