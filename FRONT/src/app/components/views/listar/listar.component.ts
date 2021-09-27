@@ -1,18 +1,13 @@
-import { Livro } from './../../../models/livro';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
+import { Livro } from 'src/app/models/livro';
 import { LivroService } from 'src/app/services/livro.service';
 
 @Component({
   selector: 'app-listar',
-  template: `
-    <p>
-      listar works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './listar.component.html',
+  styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
 

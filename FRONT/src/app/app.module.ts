@@ -17,19 +17,19 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CadastrarComponent } from './components/views/cadastrar/cadastrar.component';
-import { ListarComponent } from './components/views/listar/listar.component';
 import { ContentComponent } from './components/template/content/content.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/template/header/header.component';
+import { ListarComponent } from './components/views/listar/listar.component';
+import { CadastrarComponent } from './components/views/cadastrar/cadastrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastrarComponent,
     ContentComponent,
-    ListarComponent,
     HeaderComponent,
+    ListarComponent,
+    CadastrarComponent
   ],
   imports: [
     FormsModule,
