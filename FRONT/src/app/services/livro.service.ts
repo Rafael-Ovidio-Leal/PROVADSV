@@ -12,14 +12,14 @@ export class LivroService {
     constructor(private http: HttpClient) {}
 
     list(): Observable<Livro[]> {
-        return this.http.get<Livro[]>(`${this.baseURL}/list`);
+        return this.http.get<Livro[]>(`${this.baseURL}/listar`);
     }
 
     getById(Id: number): Observable<Livro> {
-        return this.http.get<Livro>(`${this.baseURL}/getbyId/${Id}`);
+        return this.http.get<Livro>(`${this.baseURL}/listarId/${Id}`);
     }
 
     create(livro: Livro): Observable<Livro> {
-        return this.http.post<Livro>(`${this.baseURL}/create`, livro);
+        return this.http.post<Livro>(`${this.baseURL}/criar`, livro);
     }
 }

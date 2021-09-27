@@ -1,4 +1,8 @@
+import { Livro } from './../../../models/livro';
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
+import { LivroService } from 'src/app/services/livro.service';
 
 @Component({
   selector: 'app-listar',
@@ -12,9 +16,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor() { }
+  colunasLivros: string[] = ['id', 'titulo', 'autor', 'genero', 'totalpaginas'];
+  livrosTable = new MatTableDataSource<Livro>();
+  livros: Livro[] = [];
+
+  id!: number;
+  livro!: Livro;
+
+  constructor(private service: LivroService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.service.list().subscribe((livros) => {
+      this.livros = livros;
+      console.log(livros)
+    });
   }
 
 }
