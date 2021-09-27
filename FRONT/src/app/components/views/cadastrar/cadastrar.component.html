@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title> Cadastrar Livro </mat-card-title>
+    <mat-card-content>
+  
+      <div class="livro">
+        
+        <mat-card>
+            <mat-card-title> Adicionar Livro </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-livro">
+                <mat-form-field>
+                  <mat-label for="titulo">Título do livro</mat-label>
+                  <input matInput placeholder="titulo Livro" type="text" name="titulo" [(ngModel)]="titulo" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label for="autor">Autor do Livro</mat-label>
+                    <input matInput placeholder="autor" type="text" name="autor" [(ngModel)]="autor" />
+                  </mat-form-field>
+                <mat-form-field>
+                    <mat-label for="genero">Gênero do Livro</mat-label>
+                    <input matInput placeholder="Gênero" type="text" name="genero" [(ngModel)]="genero" />
+                  </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="totalpaginas">Total de páginas</mat-label>
+                  <input matInput placeholder="Total de paginas" type="number" name="totalpaginas" [(ngModel)]="totalpaginas" />
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+        </mat-card>
+  
+      </div>
+  
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
+            <a mat-stroked-button routerLink="livro/listar"> Listar Livro </a>
+        </mat-card-actions>
+        
+    </mat-card-content>
+</mat-card>              
+            

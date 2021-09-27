@@ -1,0 +1,31 @@
+
+<table mat-table [dataSource]="livros" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id do livro </th>
+        <td mat-cell *matCellDef="let livro"> {{livro.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell *matHeaderCellDef> Titulo do livro </th>
+      <td mat-cell *matCellDef="let livro"> {{livro.nome}} </td>
+    </ng-container>
+  
+       <ng-container matColumnDef="autor">
+        <th mat-header-cell *matHeaderCellDef> Autor do livro </th>
+        <td mat-cell *matCellDef="let livro"> {{autor.genero}} </td>
+      </ng-container>
+  
+       <ng-container matColumnDef="genero">
+        <th mat-header-cell *matHeaderCellDef> Genero do livro </th>
+        <td mat-cell *matCellDef="let livro"> {{livro.genero}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalpaginas">
+        <th mat-header-cell *matHeaderCellDef> Total de Paginas do livro </th>
+        <td mat-cell *matCellDef="let livro"> {{livro.totalpaginas}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="colunasLivros"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasLivros;"></tr>
+  </table>
